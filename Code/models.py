@@ -224,7 +224,7 @@ class CompositionalCompressor(DataCompressor):
         self.dist_opt.apply_gradients(zip(dist_grads, [c_s, w_s]))
         return dist_loss
 
-    def compress(self, ds, c, img_shape, num_synth, k, buf=None, verbose=False):
+    def compress(self, ds, c, img_shape, num_synth, k, buf=None, verbose=False): # num_synth:w, k:n_components
         # Create and initialize synthetic data
         c_s = tf.Variable(tf.random.uniform((k, img_shape[0], img_shape[1], img_shape[2]), maxval=tf.constant(1.0, dtype=tf.float32)))
         y_s = tf.Variable(tf.one_hot(tf.constant(c, shape=(num_synth,), dtype=tf.int32), 10), dtype=tf.float32)

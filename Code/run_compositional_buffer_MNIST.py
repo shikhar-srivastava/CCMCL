@@ -9,7 +9,7 @@ import datasets
 import utils
 import numpy as np
 
-utils.enable_gpu_mem_growth()
+#utils.enable_gpu_mem_growth()
 
 # Define constants
 BATCH_SIZE = 128
@@ -26,7 +26,7 @@ IMG_SHAPE = (28, 28, 1)
 K = 100
 T = 10
 RUNS = 5
-LOG_PATH = "../logs/CompositionalBuffer/MNIST"
+LOG_PATH = ""
 
 # Create array for storing results
 res_loss = np.zeros((RUNS, len(BUFFER_SIZES)), dtype=np.float)

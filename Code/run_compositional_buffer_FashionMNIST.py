@@ -9,24 +9,24 @@ import datasets
 import utils
 import numpy as np
 
-utils.enable_gpu_mem_growth()
-
+#utils.enable_gpu_mem_growth()
+print('$#$@#$@#$!RUNNING$@#$@#$$')
 # Define constants
 BATCH_SIZE = 128
 ITERS = 500
 VAL_ITERS = 10
 VAL_BATCHES = 10
 LEARNING_RATE = 0.01
-TASKS = 5
-CLASSES = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-BUFFER_SIZES = (20, 40, 60, 80, 100)
+TASKS = 2
+CLASSES =  (0, 1, 2, 3) #(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+BUFFER_SIZES = [40] #(20, 40, 60, 80, 100)
 DIST_BATCH_SIZE = 256
 DIST_LEARNING_RATE = 0.01
 IMG_SHAPE = (28, 28, 1)
 K = 100
 T = 10
-RUNS = 5
-LOG_PATH = "../logs/CompositionalBuffer/FashionMNIST"
+RUNS = 1
+LOG_PATH = "/home/dm1/shikhar_backup/shikhar/CCMCL/logs/CompositionalBuffer/FashionMNIST"
 
 # Create array for storing results
 res_loss = np.zeros((RUNS, len(BUFFER_SIZES)), dtype=np.float)
